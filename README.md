@@ -4,7 +4,7 @@ Welcome to the **Airflow Theory Guide**, a comprehensive educational repository 
 
 ---
 
-![2025-08-19-091651](E:\Proj\airflow-theory-guide\2025-08-19-091651.png)
+![2025-08-19-091651](2025-08-19-091651.png)
 
 ## Repository Structure (Left-to-Right)
 
@@ -93,5 +93,6 @@ airflow-theory-guide/
 │
 └── references.md              # All links to official docs and tutorials
 ```
+
 
 # Airflow_Theo
