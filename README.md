@@ -6,7 +6,7 @@ Welcome to the **Airflow Theory Guide**, a comprehensive educational repository 
 ---
 config:
   layout: elk
-  theme: forest
+  theme: default
 ---
 flowchart LR
     A["airflow-theory-guide"] --> B1["01-introduction"] & B2["02-core-components"] & B3["03-ecosystem"] & B4["04-logging-monitoring"] & B5["05-version-differences"] & B6["references.md"]
