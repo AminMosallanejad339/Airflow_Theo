@@ -2,9 +2,21 @@
 
 Welcome to the **Airflow Theory Guide**, a comprehensive educational repository for understanding Apache Airflow. This repository focuses on **conceptual knowledge** and **architecture insights**. Practical projects and hands-on ETL pipelines are handled in separate repositories.
 
+```mermaid
 ---
+config:
+  layout: elk
+  theme: forest
+---
+flowchart LR
+    A["airflow-theory-guide"] --> B1["01-introduction"] & B2["02-core-components"] & B3["03-ecosystem"] & B4["04-logging-monitoring"] & B5["05-version-differences"] & B6["references.md"]
+    B1 --> B1a["overview.md"] & B1b["architecture.md"]
+    B2 --> B2a["operators.md"] & B2b["sensors.md"] & B2c["hooks.md"]
+    B3 --> B3a["integrations.md"] & B3b["providers.md"] & B3c["plugins.md"] & B3d["community.md"]
+    B4 --> B4a["logging.md"] & B4b["monitoring.md"]
+    B5 --> B5a["airflow-2.md"] & B5b["airflow-3.md"]
 
-![2025-08-19-091651](2025-08-19-091651.png)
+```
 
 ## Repository Structure (Left-to-Right)
 
@@ -94,5 +106,4 @@ airflow-theory-guide/
 └── references.md              # All links to official docs and tutorials
 ```
 
-
-# Airflow_Theo
+# 
