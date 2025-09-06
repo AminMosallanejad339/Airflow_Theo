@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # 1. N8N Service
+  n8n:
+    image: n8nio/n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - GENERIC_TIMEZONE=UTC
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      - orchestration-net
+
+  # 2. Node-RED Service
+  nodered:
+    image: nodered/node-red
+    restart: unless-stopped
+    ports:
+      - "1880:1880"
+    environment:
+      - TZ=UTC
+    volumes:
+      - nodered_data:/data
+    networks:
+      - orchestration-net
+
+  # 3. Apache Hop Web Service - USING PORT 8085
+  apache-hop:
+    image: apache/hop:latest
+    restart: unless-stopped
+    ports:
+      - "8085:8080" # Mapped to localhost:8085
+    environment:
+      - HOP_HOST_OFFSET=100
+      - HOP_SERVER_USER=admin
+      - HOP_SERVER_PASSWORDS=admin
+      - HOP_SERVER_PORT=8080
+    volumes:
+      - hop_data:/usr/local/hop
+    networks:
+      - orchestration-net
+
+volumes:
+  n8n_data:
+  nodered_data:
+  hop_data:
+
+networks:
+  orchestration-net:
+    driver: bridge
